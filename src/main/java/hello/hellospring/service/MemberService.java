@@ -2,14 +2,17 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+// 스프링이 뜰 때 @Service가 붙은 메소드를 등록해줌
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) { // Dependency Injection, 외부에서 memberRepository를 넣어줌
         this.memberRepository = memberRepository;
     }
